@@ -1,0 +1,49 @@
+- .gitignore
+- README.md
+- components.json
+- eslint.config.mjs
+- next-env.d.ts
+- next.config.ts
+- package.json
+- pnpm-lock.yaml
+- postcss.config.mjs
+- public
+  - background
+    - bg-today-large.svg
+    - bg-today-small.svg
+  - icons
+    - favicon-32x32.png
+    - icon-checkmark.svg
+    - icon-drizzle.webp
+    - icon-dropdown.svg
+    - icon-error.svg
+    - icon-fog.webp
+    - icon-loading.svg
+    - icon-overcast.webp
+    - icon-partly-cloudy.webp
+    - icon-rain.webp
+    - icon-retry.svg
+    - icon-search.svg
+    - icon-snow.webp
+    - icon-storm.webp
+    - icon-sunny.webp
+    - icon-units.svg
+    - logo.svg
+- src
+  - app
+    - components
+      - header
+        - Dropdown.tsx
+        - Header.tsx
+        - Logo.tsx
+        - Search.tsx
+    - favicon.ico
+    - globals.css
+    - layout.tsx
+    - page.tsx
+  - components
+    - ui
+      - dropdown-menu.tsx
+  - lib
+    - utils.ts
+- tsconfig.json

@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${bricolage.className} ${dmSans.className} antialiased bg-[#02012B] text-white  w-screen overflow-hidden`}
+        className={`${bricolage.className} ${dmSans.className} antialiased bg-[#02012B] text-white  w-screen overflow-x-hidden`}
       >
         {children}
       </body>
