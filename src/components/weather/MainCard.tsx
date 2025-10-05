@@ -2,12 +2,12 @@ import Image from "next/image";
 
 export default function MainCard() {
   return (
-    <div className="relative w-full h-[300px] flex items-center justify-between px-10">
+    <div className="relative w-[800px] h-[300px] flex items-center justify-between px-10">
       <Image
         src={"/background/bg-today-large.svg"}
         alt="card background"
         fill
-        className="absolute object-cover rounded-[10px] -z-10 w-full"
+        className="-z-10"
       />
       <div className="flex flex-col gap-2">
         <span className="text-[50px] font-bold">Ciro-Egypt</span>

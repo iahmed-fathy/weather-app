@@ -1,5 +1,6 @@
 "use client";
 
+import MyContext from "@/store/MyContext";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,12 +12,13 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Image from "next/image";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 export default function Dropdown() {
-  const [temperature, setTemperature] = useState("c");
-  const [windSpeed, setWindSpeed] = useState("km");
-  const [precipitation, setPrecipitation] = useState("mm");
+  const context = useContext(MyContext);
+  if (!context) return;
+
+  const { setTempUnit, setWindUnit, setPrecUnit } = context;
 
   return (
     <DropdownMenu>
@@ -43,10 +45,10 @@ export default function Dropdown() {
           <DropdownMenuLabel className="text-white/50 text-[16px]">
             Temperature
           </DropdownMenuLabel>
-          <DropdownMenuItem onClick={() => setTemperature("c")}>
+          <DropdownMenuItem onClick={() => setTempUnit("celsius")}>
             Celsius (°C)
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => setTemperature("f")}>
+          <DropdownMenuItem onClick={() => setTempUnit("fahrenheit")}>
             Fahrenheit (°F)
           </DropdownMenuItem>
         </DropdownMenuGroup>
@@ -55,10 +57,10 @@ export default function Dropdown() {
           <DropdownMenuLabel className="text-white/50 text-[16px]">
             Wind Speed
           </DropdownMenuLabel>
-          <DropdownMenuItem onClick={() => setWindSpeed("km")}>
+          <DropdownMenuItem onClick={() => setWindUnit("kmh")}>
             km/h
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => setWindSpeed("mph")}>
+          <DropdownMenuItem onClick={() => setWindUnit("mph")}>
             mph
           </DropdownMenuItem>
         </DropdownMenuGroup>
@@ -67,10 +69,10 @@ export default function Dropdown() {
           <DropdownMenuLabel className="text-white/50 text-[16px]">
             Precipitation
           </DropdownMenuLabel>
-          <DropdownMenuItem onClick={() => setPrecipitation("mm")}>
+          <DropdownMenuItem onClick={() => setPrecUnit("mm")}>
             Millimeters (mm)
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => setPrecipitation("in")}>
+          <DropdownMenuItem onClick={() => setPrecUnit("inch")}>
             Inches (in)
           </DropdownMenuItem>
         </DropdownMenuGroup>
